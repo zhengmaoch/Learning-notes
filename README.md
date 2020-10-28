@@ -21,10 +21,10 @@ $ git config --global user.email test@runoob.com
 $ git config --list
 
 # 3、创建仓库
-$ git init newrepo
+$ git init Learning-notes
 
 # 4、克隆
-$ git clone git://github.com/schacon/grit.git
+$ git clone https://github.com/zhengmaoch/Learning-notes.git
 
 # 5、提交文件到本地仓库
 $ git status -s
