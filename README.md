@@ -27,7 +27,7 @@ $ git config -e
 # 3、创建仓库 git init newrepo
 $ git init Learning-notes
 
-# 4、克隆 git clone <repo> <directory>
+# 4、仅克隆指定的分支 git clone -b <branch> --single-branch <repo> <directory>
 $ git clone https://github.com/zhengmaoch/Learning-notes.git
 
 # 5、提交文件到本地仓库
