@@ -1,0 +1,26 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.pdb
+D:\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\bin\Debug\Chang.Creational.Abstract.Structural.exe.config
+D:\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\bin\Debug\Chang.Creational.Abstract.Structural.exe
+D:\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\bin\Debug\Chang.Creational.Abstract.Structural.pdb
+D:\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.Creational.Abstract.Structural.csprojResolveAssemblyReference.cache
+D:\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.Creational.Abstract.Structural.exe
+D:\Projects\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.Creational.Abstract.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\bin\Debug\Chang.Creational.Abstract.Structural.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\bin\Debug\Chang.Creational.Abstract.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\bin\Debug\Chang.Creational.Abstract.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.Creational.Abstract.Structural.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.Creational.Abstract.Structural.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.Creational.Abstract.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Abstract.Structural\obj\Debug\Chang.Creational.Abstract.Structural.pdb

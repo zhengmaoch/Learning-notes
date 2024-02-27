@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Decorator.RealWorld\bin\Debug\Chang.Structural.Decorator.RealWorld.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Decorator.RealWorld\bin\Debug\Chang.Structural.Decorator.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Decorator.RealWorld\bin\Debug\Chang.Structural.Decorator.RealWorld.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Decorator.RealWorld\obj\Debug\Chang.Structural.Decorator.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Decorator.RealWorld\obj\Debug\Chang.Structural.Decorator.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Decorator.RealWorld\bin\Debug\Chang.Structural.Decorator.RealWorld.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Decorator.RealWorld\bin\Debug\Chang.Structural.Decorator.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Decorator.RealWorld\bin\Debug\Chang.Structural.Decorator.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Decorator.RealWorld\obj\Debug\Chang.Structural.Decorator.RealWorld.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Decorator.RealWorld\obj\Debug\Chang.Structural.Decorator.RealWorld.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Decorator.RealWorld\obj\Debug\Chang.Structural.Decorator.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Decorator.RealWorld\obj\Debug\Chang.Structural.Decorator.RealWorld.pdb

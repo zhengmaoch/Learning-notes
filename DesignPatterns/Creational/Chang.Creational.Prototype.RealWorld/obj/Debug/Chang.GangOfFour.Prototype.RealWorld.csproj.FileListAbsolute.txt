@@ -1,0 +1,5 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Prototype.RealWorld\bin\Debug\Chang.GangOfFour.Prototype.RealWorld.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Prototype.RealWorld\bin\Debug\Chang.GangOfFour.Prototype.RealWorld.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Prototype.RealWorld\bin\Debug\Chang.GangOfFour.Prototype.RealWorld.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Prototype.RealWorld\obj\Debug\Chang.GangOfFour.Prototype.RealWorld.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Prototype.RealWorld\obj\Debug\Chang.GangOfFour.Prototype.RealWorld.pdb

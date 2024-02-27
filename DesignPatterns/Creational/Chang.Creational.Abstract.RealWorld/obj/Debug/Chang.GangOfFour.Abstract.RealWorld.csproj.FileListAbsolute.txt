@@ -1,0 +1,6 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.RealWorld\bin\Debug\Chang.GangOfFour.Abstract.RealWorld.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.RealWorld\bin\Debug\Chang.GangOfFour.Abstract.RealWorld.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.RealWorld\bin\Debug\Chang.GangOfFour.Abstract.RealWorld.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.RealWorld\obj\Debug\Chang.GangOfFour.Abstract.RealWorld.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.RealWorld\obj\Debug\Chang.GangOfFour.Abstract.RealWorld.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.RealWorld\obj\Debug\Chang.GangOfFour.Abstract.RealWorld.pdb

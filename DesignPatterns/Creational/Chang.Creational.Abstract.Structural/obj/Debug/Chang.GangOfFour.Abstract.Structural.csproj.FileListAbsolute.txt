@@ -1,0 +1,6 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\bin\Debug\Chang.GangOfFour.Abstract.Structural.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Abstract.Structural\obj\Debug\Chang.GangOfFour.Abstract.Structural.pdb

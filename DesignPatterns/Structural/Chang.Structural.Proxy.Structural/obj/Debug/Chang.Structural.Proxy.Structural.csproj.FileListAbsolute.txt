@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Proxy.Structural\bin\Debug\Chang.Structural.Proxy.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Proxy.Structural\bin\Debug\Chang.Structural.Proxy.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Proxy.Structural\bin\Debug\Chang.Structural.Proxy.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Proxy.Structural\obj\Debug\Chang.Structural.Proxy.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Proxy.Structural\obj\Debug\Chang.Structural.Proxy.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Proxy.Structural\bin\Debug\Chang.Structural.Proxy.Structural.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Proxy.Structural\bin\Debug\Chang.Structural.Proxy.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Proxy.Structural\bin\Debug\Chang.Structural.Proxy.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Proxy.Structural\obj\Debug\Chang.Structural.Proxy.Structural.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Proxy.Structural\obj\Debug\Chang.Structural.Proxy.Structural.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Proxy.Structural\obj\Debug\Chang.Structural.Proxy.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Proxy.Structural\obj\Debug\Chang.Structural.Proxy.Structural.pdb

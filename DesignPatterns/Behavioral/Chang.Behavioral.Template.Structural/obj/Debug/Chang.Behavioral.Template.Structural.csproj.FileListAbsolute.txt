@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Template.Structural\bin\Debug\Chang.Behavioral.Template.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Template.Structural\bin\Debug\Chang.Behavioral.Template.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Template.Structural\bin\Debug\Chang.Behavioral.Template.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Template.Structural\obj\Debug\Chang.Behavioral.Template.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Template.Structural\obj\Debug\Chang.Behavioral.Template.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Template.Structural\bin\Debug\Chang.Behavioral.Template.Structural.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Template.Structural\bin\Debug\Chang.Behavioral.Template.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Template.Structural\bin\Debug\Chang.Behavioral.Template.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Template.Structural\obj\Debug\Chang.Behavioral.Template.Structural.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Template.Structural\obj\Debug\Chang.Behavioral.Template.Structural.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Template.Structural\obj\Debug\Chang.Behavioral.Template.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Template.Structural\obj\Debug\Chang.Behavioral.Template.Structural.pdb

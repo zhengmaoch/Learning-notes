@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.Structural\bin\Debug\Chang.Behavioral.Memento.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.Structural\bin\Debug\Chang.Behavioral.Memento.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.Structural\bin\Debug\Chang.Behavioral.Memento.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.Structural\obj\Debug\Chang.Behavioral.Memento.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.Structural\obj\Debug\Chang.Behavioral.Memento.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.Structural\bin\Debug\Chang.Behavioral.Memento.Structural.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.Structural\bin\Debug\Chang.Behavioral.Memento.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.Structural\bin\Debug\Chang.Behavioral.Memento.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.Structural\obj\Debug\Chang.Behavioral.Memento.Structural.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.Structural\obj\Debug\Chang.Behavioral.Memento.Structural.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.Structural\obj\Debug\Chang.Behavioral.Memento.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.Structural\obj\Debug\Chang.Behavioral.Memento.Structural.pdb

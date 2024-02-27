@@ -1,0 +1,17 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.RealWorld\obj\Debug\Chang.GangOfFour.Builder.RealWorld.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.RealWorld\obj\Debug\Chang.GangOfFour.Builder.RealWorld.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Builder.RealWorld\obj\Debug\Chang.GangOfFour.Builder.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Builder.RealWorld\obj\Debug\Chang.GangOfFour.Builder.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Builder.RealWorld\bin\Debug\Chang.GangOfFour.Builder.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Builder.RealWorld\obj\Debug\Chang.Creational.Builder.RealWorld.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Builder.RealWorld\obj\Debug\Chang.Creational.Builder.RealWorld.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Builder.RealWorld\obj\Debug\Chang.GangOfFour.Builder.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Builder.RealWorld\obj\Debug\Chang.GangOfFour.Builder.RealWorld.pdb

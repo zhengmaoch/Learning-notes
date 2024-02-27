@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Bridge.RealWorld\bin\Debug\Chang.Structural.Bridge.RealWorld.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Bridge.RealWorld\bin\Debug\Chang.Structural.Bridge.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Bridge.RealWorld\bin\Debug\Chang.Structural.Bridge.RealWorld.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Bridge.RealWorld\obj\Debug\Chang.Structural.Bridge.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Bridge.RealWorld\obj\Debug\Chang.Structural.Bridge.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Bridge.RealWorld\bin\Debug\Chang.Structural.Bridge.RealWorld.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Bridge.RealWorld\bin\Debug\Chang.Structural.Bridge.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Bridge.RealWorld\bin\Debug\Chang.Structural.Bridge.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Bridge.RealWorld\obj\Debug\Chang.Structural.Bridge.RealWorld.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Bridge.RealWorld\obj\Debug\Chang.Structural.Bridge.RealWorld.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Bridge.RealWorld\obj\Debug\Chang.Structural.Bridge.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Bridge.RealWorld\obj\Debug\Chang.Structural.Bridge.RealWorld.pdb

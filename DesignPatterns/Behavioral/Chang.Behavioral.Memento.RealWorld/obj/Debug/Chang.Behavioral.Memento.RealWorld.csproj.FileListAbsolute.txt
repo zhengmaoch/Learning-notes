@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.RealWorld\bin\Debug\Chang.Behavioral.Memento.RealWorld.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.RealWorld\bin\Debug\Chang.Behavioral.Memento.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.RealWorld\bin\Debug\Chang.Behavioral.Memento.RealWorld.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.RealWorld\obj\Debug\Chang.Behavioral.Memento.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Behavioral.Memento.RealWorld\obj\Debug\Chang.Behavioral.Memento.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.RealWorld\bin\Debug\Chang.Behavioral.Memento.RealWorld.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.RealWorld\bin\Debug\Chang.Behavioral.Memento.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.RealWorld\bin\Debug\Chang.Behavioral.Memento.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.RealWorld\obj\Debug\Chang.Behavioral.Memento.RealWorld.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.RealWorld\obj\Debug\Chang.Behavioral.Memento.RealWorld.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.RealWorld\obj\Debug\Chang.Behavioral.Memento.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Behavioral\Chang.Behavioral.Memento.RealWorld\obj\Debug\Chang.Behavioral.Memento.RealWorld.pdb

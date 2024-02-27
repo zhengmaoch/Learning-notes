@@ -1,0 +1,17 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Factory.Structural\obj\Debug\Chang.GangOfFour.Factory.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Factory.Structural\obj\Debug\Chang.GangOfFour.Factory.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Factory.Structural\obj\Debug\Chang.GangOfFour.Factory.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Factory.Structural\obj\Debug\Chang.GangOfFour.Factory.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Factory.Structural\bin\Debug\Chang.GangOfFour.Factory.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Factory.Structural\obj\Debug\Chang.Creational.Factory.Structural.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Factory.Structural\obj\Debug\Chang.Creational.Factory.Structural.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Factory.Structural\obj\Debug\Chang.GangOfFour.Factory.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Factory.Structural\obj\Debug\Chang.GangOfFour.Factory.Structural.pdb

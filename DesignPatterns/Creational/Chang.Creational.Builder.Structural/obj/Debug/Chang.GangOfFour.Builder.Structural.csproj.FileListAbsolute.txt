@@ -1,0 +1,5 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.Structural\bin\Debug\Chang.GangOfFour.Builder.Structural.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.Structural\bin\Debug\Chang.GangOfFour.Builder.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.Structural\bin\Debug\Chang.GangOfFour.Builder.Structural.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.Structural\obj\Debug\Chang.GangOfFour.Builder.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Builder.Structural\obj\Debug\Chang.GangOfFour.Builder.Structural.pdb

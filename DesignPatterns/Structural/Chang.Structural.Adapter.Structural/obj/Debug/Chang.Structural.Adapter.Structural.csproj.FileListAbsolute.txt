@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Adapter.Structural\bin\Debug\Chang.Structural.Adapter.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Adapter.Structural\bin\Debug\Chang.Structural.Adapter.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Adapter.Structural\bin\Debug\Chang.Structural.Adapter.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Adapter.Structural\obj\Debug\Chang.Structural.Adapter.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Adapter.Structural\obj\Debug\Chang.Structural.Adapter.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Adapter.Structural\bin\Debug\Chang.Structural.Adapter.Structural.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Adapter.Structural\bin\Debug\Chang.Structural.Adapter.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Adapter.Structural\bin\Debug\Chang.Structural.Adapter.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Adapter.Structural\obj\Debug\Chang.Structural.Adapter.Structural.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Adapter.Structural\obj\Debug\Chang.Structural.Adapter.Structural.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Adapter.Structural\obj\Debug\Chang.Structural.Adapter.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Adapter.Structural\obj\Debug\Chang.Structural.Adapter.Structural.pdb

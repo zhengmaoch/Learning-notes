@@ -1,0 +1,17 @@
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.exe.config
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.pdb
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Singleton.Structural\obj\Debug\Chang.GangOfFour.Singleton.Structural.exe
+C:\Users\Administrator\documents\visual studio 2013\Projects\DesignPatterns\Chang.GangOfFour.Singleton.Structural\obj\Debug\Chang.GangOfFour.Singleton.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Singleton.Structural\obj\Debug\Chang.GangOfFour.Singleton.Structural.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Creational.Singleton.Structural\obj\Debug\Chang.GangOfFour.Singleton.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Singleton.Structural\bin\Debug\Chang.GangOfFour.Singleton.Structural.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Singleton.Structural\obj\Debug\Chang.Creational.Singleton.Structural.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Singleton.Structural\obj\Debug\Chang.Creational.Singleton.Structural.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Singleton.Structural\obj\Debug\Chang.GangOfFour.Singleton.Structural.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Creational\Chang.Creational.Singleton.Structural\obj\Debug\Chang.GangOfFour.Singleton.Structural.pdb

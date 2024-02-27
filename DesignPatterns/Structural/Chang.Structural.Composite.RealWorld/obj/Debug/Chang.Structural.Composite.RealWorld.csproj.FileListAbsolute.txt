@@ -1,0 +1,12 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Composite.RealWorld\bin\Debug\Chang.Structural.Composite.RealWorld.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Composite.RealWorld\bin\Debug\Chang.Structural.Composite.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Composite.RealWorld\bin\Debug\Chang.Structural.Composite.RealWorld.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Composite.RealWorld\obj\Debug\Chang.Structural.Composite.RealWorld.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\DesignPatterns\Chang.Structural.Composite.RealWorld\obj\Debug\Chang.Structural.Composite.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Composite.RealWorld\bin\Debug\Chang.Structural.Composite.RealWorld.exe.config
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Composite.RealWorld\bin\Debug\Chang.Structural.Composite.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Composite.RealWorld\bin\Debug\Chang.Structural.Composite.RealWorld.pdb
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Composite.RealWorld\obj\Debug\Chang.Structural.Composite.RealWorld.csproj.AssemblyReference.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Composite.RealWorld\obj\Debug\Chang.Structural.Composite.RealWorld.csproj.CoreCompileInputs.cache
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Composite.RealWorld\obj\Debug\Chang.Structural.Composite.RealWorld.exe
+D:\Source\Repos\Learning-notes\DesignPatterns\Structural\Chang.Structural.Composite.RealWorld\obj\Debug\Chang.Structural.Composite.RealWorld.pdb
