@@ -1,0 +1,213 @@
+name: "智能测试全流程工作流"
+description: "结合知识库的测试用例生成/执行/分析系统"
+version: "2.2"
+engine:
+  type: "dify"
+  version: "0.6.0"
+
+components:
+  models:
+    - name: "deepseek-r1-14b"
+      provider: "ollama"
+      type: "llm"
+      params:
+        temperature: 0.3  # 平衡创造性与稳定性
+        top_p: 0.85
+        max_tokens: 20000
+        
+    - name: "nomic-embed-text"
+      provider: "ollama"
+      type: "embedding"
+      params:
+        embedding_size: 768
+
+knowledge_bases:
+  - id: "test-case-kb"
+    name: "测试用例知识库"
+    embedding_model: "nomic-embed-text"
+    description: "存储历史测试方案、缺陷模式和测试数据模板"
+    metadata_fields:
+      - "被测系统类型"
+      - "测试层级"
+      - "缺陷检出率"
+
+  - id: "quality-standards-kb"
+    name: "质量标准知识库" 
+    embedding_model: "nomic-embed-text"
+    description: "企业质量红线与测试验收标准"
+
+workflow:
+  nodes:
+    # ========== 输入阶段 ==========
+    - id: "req-input"
+      type: "input"
+      name: "需求输入"
+      parameters:
+        input_type: "multi-format"
+        description: "上传需求文档/设计文档/接口定义"
+        supported_formats: [".md", ".json", ".yaml", ".puml"]
+
+    - id: "code-input"
+      type: "input"
+      name: "被测代码输入"
+      parameters:
+        input_type: "file"
+        description: "上传待测源代码或构建产物"
+        supported_formats: [".java", ".py", ".js", ".jar", ".war"]
+
+    # ========== 测试策划阶段 ==========
+    - id: "context-builder"
+      type: "processing"
+      name: "测试上下文构建"
+      model: "deepseek-r1-14b"
+      parameters:
+        system_prompt: |
+          作为测试架构师，分析输入资产并提取：
+          1. 业务关键路径
+          2. 风险模块识别
+          3. 接口依赖图谱
+          4. 质量特性要求
+          
+          输出测试策略框架（含测试类型建议）
+      dependencies: ["req-input", "code-input"]
+
+    - id: "test-pattern-lookup"
+      type: "knowledge_retrieval"
+      name: "测试模式检索"
+      parameters:
+        knowledge_base: "test-case-kb"
+        query_template: "类似系统测试方案 for {{context.系统类型}}"
+        top_k: 5
+        min_similarity: 0.7
+      dependencies: ["context-builder"]
+
+    # ========== 测试设计阶段 ==========
+    - id: "case-generator"
+      type: "generation"
+      name: "测试用例生成"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          基于以下要素生成详细测试用例：
+          测试策略：{{test_strategy}}
+          参考案例：{{test_patterns}}
+          质量标准：{{quality_standards}}
+          
+          要求：
+          1. 使用企业模板格式
+          2. 包含正向/异常场景
+          3. 标注预期结果
+          4. 关联需求追踪ID
+        output_format: "gherkin"  # 支持BDD格式
+      dependencies: ["context-builder", "test-pattern-lookup"]
+
+    - id: "data-generator"
+      type: "generation"
+      name: "测试数据生成"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          生成符合以下要求的测试数据：
+          1. 覆盖边界值
+          2. 包含失效模式
+          3. 符合生产数据分布
+          4. 包含数据有效性校验规则
+          
+          输出CSV+SQL两种格式
+      dependencies: ["case-generator"]
+
+    # ========== 测试执行阶段 ==========
+    - id: "script-converter"
+      type: "processing"
+      name: "自动化脚本转换"
+      model: "deepseek-r1-14b"
+      parameters:
+        system_prompt: |
+          将测试用例转换为可执行脚本：
+          1. 使用企业测试框架
+          2. 添加必要的等待/断言
+          3. 集成监控探针
+          4. 生成可视化报告钩子
+          
+          目标框架：{{test_framework}}
+      dependencies: ["case-generator"]
+
+    - id: "execution-engine"
+      type: "action"
+      name: "测试执行引擎"
+      parameters:
+        engine_type: "selenium/jmeter"  # 可配置
+        env_config: "preprod"
+        parallel: true
+      dependencies: ["script-converter"]
+
+    # ========== 质量分析阶段 ==========
+    - id: "defect-analyzer"
+      type: "processing"
+      name: "缺陷智能分析"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          分析测试结果并：
+          1. 聚类相似缺陷
+          2. 识别根本原因模式
+          3. 评估质量趋势
+          4. 生成改进建议
+          
+          使用JIRA兼容格式输出
+      dependencies: ["execution-engine"]
+
+    - id: "coverage-visualizer"
+      type: "processing"
+      name: "覆盖率可视化"
+      model: "deepseek-r1-14b"
+      parameters:
+        task: |
+          生成交互式覆盖率报告：
+          1. 代码/需求双维度
+          2. 热点模块标识
+          3. 历史趋势对比
+          4. 达标率自动计算
+      dependencies: ["execution-engine"]
+
+    # ========== 输出阶段 ==========
+    - id: "output"
+      type: "output"
+      name: "测试资产包"
+      parameters:
+        formats:
+          - type: "zip"
+            contents:
+              - "test_cases/"
+              - "test_data/"
+              - "execution_reports/"
+            filename_template: "测试包_{{timestamp}}.zip"
+          - type: "html"
+            filename_template: "质量分析报告_{{timestamp}}.html"
+      dependencies: ["defect-analyzer", "coverage-visualizer"]
+
+settings:
+  ollama:
+    base_url: "http://ollama-qa:11434"
+    gpu_priority: "high"
+  test:
+    default_framework: "pytest"  # 可覆盖
+    risk_threshold: 0.85
+  compliance:
+    require_approval: false
+
+edges:
+  - from: ["req-input", "code-input"]
+    to: "context-builder"
+  - from: "context-builder"
+    to: ["test-pattern-lookup", "case-generator"]
+  - from: "test-pattern-lookup"
+    to: "case-generator"
+  - from: "case-generator"
+    to: ["data-generator", "script-converter"]
+  - from: "script-converter"
+    to: "execution-engine"
+  - from: "execution-engine"
+    to: ["defect-analyzer", "coverage-visualizer"]
+  - from: ["defect-analyzer", "coverage-visualizer"]
+    to: "output"

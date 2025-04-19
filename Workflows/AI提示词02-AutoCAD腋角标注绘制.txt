@@ -1,0 +1,18 @@
+用C#在AutoCAD中封装一个绘制自定义建筑结构腋角标注CornerDimension的类方便被其他方法直接调用，腋角标注是一个包含腋角顶点的三角形，顶点两侧的边分别表示腋角的宽和高，标注文字绘制在对应三角形边外侧中间的位置上且文字方向与边线方向平行。
+
+功能说明：
+1.标注要绘制到指定的标注图层中，允许用户进行设置，默认绘制在0图层；
+2.标注文字用指定的文字样式，允许用户进行设置；
+3.标注文字大小随视口比例进行自动调整，标注文字与标注线保持一定的间隙;
+4.标注文字书写方向为从左到右，从下到上的原则，方便阅读习惯;
+5.计算并返回List<Polyline>格式的标注文字的包围盒集合boundingBoxs；
+6.所有生成的代码（包括类、属性、方法及关键步骤）均有详细的中文注释（尽量避免行内注释）；
+
+使用说明：
+1. 创建腋角标注对象的方法如下：
+CornerDimension dim = new CornerDimension(Line wightLine, Line heightLine, double wight, double height, ObjectId textStyle);
+其中wightLine是腋角宽标注线，heightLine是腋角高标注线，wight和height表示腋角宽高对应的值，textStyle为标注的文字样式ObjectId。
+
+2. 绘制标注方法如下：
+List<Entity> dims = dim.Draw(out List<Polyline> boundingBoxs, double scale = 1);
+其中boundingBoxs为标注文字的外包围盒集合，scale为绘制比例参数，仅影响标注文字的大小。

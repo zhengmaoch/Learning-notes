@@ -1,0 +1,174 @@
+name: AI智能代码审查工作流
+description: 多维度自动化代码质量审查工作流
+version: 1.4
+nodes:
+  - id: code-preprocess
+    type: python
+    name: 代码预处理
+    config:
+      imports: |
+        import ast
+        from collections import defaultdict
+      source: |
+        def process(code):
+            # 基础代码分析
+            try:
+                tree = ast.parse(code)
+                functions = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)]
+                return {
+                    "code_lines": len(code.split('\n')),
+                    "function_count": len(functions),
+                    "imports": [n.names[0].name for n in ast.walk(tree) 
+                               if isinstance(n, ast.Import) or isinstance(n, ast.ImportFrom)]
+                }
+            except:
+                return {"error": "代码解析失败"}
+
+  - id: static-analysis
+    type: llm
+    name: 静态分析引擎
+    config:
+      model: gpt-4-turbo
+      prompt: |
+        对以下代码进行静态分析：
+        {代码输入}
+        元信息：{code-preprocess.output}
+        
+        检查：
+        1. 语法规范（符合{代码规范}）
+        2. 潜在安全漏洞（CWE Top 25）
+        3. 性能反模式
+        4. 代码重复度
+        5. 依赖项风险（使用{依赖分析工具}标准）
+      temperature: 0.1
+      max_tokens: 3000
+
+  - id: style-check
+    type: llm
+    name: 代码风格审查
+    config:
+      model: gpt-4-turbo
+      prompt: |
+        根据{代码规范}规范审查代码风格：
+        {代码输入}
+        
+        检查：
+        1. 命名一致性（变量/函数/类）
+        2. 注释完整性（API注释率需>80%）
+        3. 代码结构（函数长度/嵌套深度）
+        4. 魔法数字使用
+        5. 异常处理规范性
+      temperature: 0.2
+      max_tokens: 2500
+
+  - id: test-evaluation
+    type: llm
+    name: 测试套件评估
+    config:
+      model: gpt-4-turbo
+      prompt: |
+        评估以下测试代码质量：
+        被测代码：{代码输入}
+        测试代码：{测试代码}
+        
+        检查：
+        1. 用例覆盖率（目标{覆盖率阈值}%）
+        2. 边界条件覆盖
+        3. Mock使用合理性
+        4. 断言完整性
+        5. 执行效率
+      temperature: 0.3
+      max_tokens: 2000
+
+  - id: security-scan
+    type: llm
+    name: 安全专项扫描
+    config:
+      model: gpt-4-turbo
+      prompt: |
+        深度扫描代码安全漏洞：
+        {代码输入}
+        
+        重点关注：
+        1. OWASP Top 10风险
+        2. 敏感信息硬编码
+        3. 不安全的依赖版本
+        4. 注入风险点
+        5. 权限控制缺陷
+        按CVSS评分分级报告
+      temperature: 0.1
+      max_tokens: 3500
+
+  - id: report-generator
+    type: llm
+    name: 审查报告生成
+    config:
+      model: gpt-4-turbo
+      prompt: |
+        综合以下分析生成专业审查报告：
+        静态分析：{static-analysis.output}
+        风格检查：{style-check.output}
+        测试评估：{test-evaluation.output}
+        安全扫描：{security-scan.output}
+        
+        报告要求：
+        1. 按严重程度分级（阻塞/严重/普通/建议）
+        2. 每个问题附修改建议
+        3. 包含量化评分（百分制）
+        4. 生成Markdown格式
+      temperature: 0.2
+      max_tokens: 4000
+
+edges:
+  - source: code-preprocess
+    target: static-analysis
+  - source: code-preprocess
+    target: style-check
+  - source: code-preprocess
+    target: security-scan
+  - source: static-analysis
+    target: report-generator
+  - source: style-check
+    target: report-generator
+  - source: test-evaluation
+    target: report-generator
+  - source: security-scan
+    target: report-generator
+
+variables:
+  - name: 代码输入
+    type: string
+    description: 待审查的源代码
+    required: true
+  - name: 测试代码
+    type: string
+    description: 对应的测试代码（可选）
+    default: ""
+  - name: 代码规范
+    type: select
+    options: ["PEP8", "Google Style", "Airbnb", "SonarQube", "自定义"]
+    default: "PEP8"
+  - name: 依赖分析工具
+    type: select
+    options: ["OWASP DEP", "Snyk", "WhiteSource", "无"]
+    default: "OWASP DEP"
+  - name: 覆盖率阈值
+    type: number
+    description: 期望的测试覆盖率(%) 
+    default: 80
+    min: 0
+    max: 100
+
+outputs:
+  - name: 代码元信息
+    value: code-preprocess.output
+  - name: 静态分析结果
+    value: static-analysis.output
+  - name: 风格审查结果
+    value: style-check.output
+  - name: 测试评估结果
+    value: test-evaluation.output
+  - name: 安全扫描结果
+    value: security-scan.output
+  - name: 完整审查报告
+    value: report-generator.output

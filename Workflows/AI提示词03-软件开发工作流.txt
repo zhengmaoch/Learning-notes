@@ -1,0 +1,60 @@
+用Dify1.2.0+Ollama+deepseek-r1:14b+nomic-embed-text设计集成企业知识库的AI软件需求分析工作流的中文版DSL（yml格式）配置文件，输出需求分析文档和html格式的界面原型。
+
+用Dify+Ollama+deepseek-r1:14b+nomic-embed-text设计集成企业知识库的AI软件设计（包含架构、概要、详细设计）工作流的中文版DSL（yml格式）配置文件，输入需求分析文档，输出设计文档（概要设计、详细设计、数据库设计、接口设计）。
+
+
+三阶段设计流水线
+
+mermaid
+复制
+graph LR
+需求输入-->架构设计-->概要设计-->详细设计-->设计评审-->输出资产包
+
+# 可在settings中调整：
+optimization:
+  batch_size: 8
+  max_concurrent_requests: 4
+  design_artifact_cache_ttl: "24h"
+  
+  
+用Dify1.2.0+Ollama+deepseek-r1:14b+nomic-embed-text设计集成企业知识库的AI软件代码生成工作流的中文版DSL（yml格式）配置文件，输入设计文档、输出可运行的源（含单元测试）代码程序（含详细的中文注释）。
+
+四阶段智能流水线
+
+mermaid
+复制
+graph TB
+设计输入-->上下文提取-->代码生成-->质量保障-->输出部署包
+
+模型微调建议
+
+yaml
+复制
+# 在settings中添加：
+model_tuning:
+  code_style: "企业编码风格"
+  forbidden_patterns: ["硬编码密码", "SQL拼接"]
+  preferred_libraries: ["企业工具库v2+"]
+  
+  
+用Dify1.2.0+Ollama+deepseek-r1:14b+nomic-embed-text设计集成企业知识库的AI软件测试工作流的中文版DSL（yml格式）配置文件，输入需求分析文档、设计文档、源代码，输出测试用例、软件测试报告（功能测试、性能测试）。
+
+graph LR
+需求/代码输入-->测试策划-->用例生成-->数据准备-->执行-->分析-->报告
+
+性能调优配置
+
+yaml
+复制
+# 在settings中添加：
+execution:
+  max_parallel_threads: 8
+  test_data_cache: "1h"
+model:
+  batch_size: 4
+
+用Dify1.2.0+Ollama+deepseek-r1:14b+nomic-embed-text设计集成企业知识库的AI软件代码审查工作流的中文版DSL（yml格式）配置文件，输入源代码程序，输出代码审查报告。
+
+用Dify1.2.0+Ollama+deepseek-r1:14b+nomic-embed-text设计集成企业知识库的AI软件文档生成工作流的中文版DSL（yml格式）配置文件，输入源代码程序，输出html格式的代码文档。
+
+

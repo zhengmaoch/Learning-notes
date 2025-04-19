@@ -1,0 +1,196 @@
+name: "企业级智能代码生成工作流"
+description: "结合知识库的上下文感知型代码生成系统"
+version: "2.1"
+engine:
+  type: "dify"
+  version: "0.6.0"
+
+components:
+  models:
+    - name: "deepseek-r1-14b"
+      provider: "ollama"
+      type: "llm"
+      params:
+        temperature: 0.2  # 降低随机性保证代码质量
+        top_k: 40
+        max_tokens: 16000
+        
+    - name: "nomic-embed-text"
+      provider: "ollama"
+      type: "embedding"
+      params:
+        embedding_size: 768
+
+knowledge_bases:
+  - id: "code-patterns-kb"
+    name: "代码模式知识库"
+    embedding_model: "nomic-embed-text"
+    description: "存储企业最佳实践代码片段、设计模式和API用法"
+    metadata_fields:
+      - "技术栈"
+      - "业务领域"
+      - "代码质量评级"
+
+  - id: "api-specs-kb"
+    name: "API规范知识库" 
+    embedding_model: "nomic-embed-text"
+    description: "企业内外API接口规范文档"
+
+workflow:
+  nodes:
+    # ========== 输入阶段 ==========
+    - id: "design-input"
+      type: "input"
+      name: "设计文档输入"
+      parameters:
+        input_type: "file"
+        description: "上传详细设计文档（Markdown/PlantUML）"
+        supported_formats: [".md", ".puml"]
+
+    # ========== 上下文增强阶段 ==========
+    - id: "context-enhancer"
+      type: "processing"
+      name: "设计文档解析"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          提取设计文档中的关键要素：
+          1. 模块分解结构
+          2. 类与方法定义
+          3. 接口契约
+          4. 数据模型
+          5. 业务规则
+          
+          输出结构化设计上下文（JSON格式）
+      dependencies: ["design-input"]
+
+    - id: "code-pattern-lookup"
+      type: "knowledge_retrieval"
+      name: "代码模式检索"
+      parameters:
+        knowledge_base: "code-patterns-kb"
+        query_template: "{{design_context}}"
+        top_k: 8
+        min_similarity: 0.68
+      dependencies: ["context-enhancer"]
+
+    - id: "api-spec-lookup"
+      type: "knowledge_retrieval"
+      name: "API规范检索"  
+      parameters:
+        knowledge_base: "api-specs-kb"
+        query_template: "接口规范 for {{design_context.模块}}"
+        top_k: 3
+      dependencies: ["context-enhancer"]
+
+    # ========== 代码生成阶段 ==========
+    - id: "scaffold-generator"
+      type: "generation"
+      name: "工程脚手架生成"
+      model: "deepseek-r1-14b"
+      parameters:
+        system_prompt: |
+          作为高级开发专家，生成符合企业标准的：
+          1. 项目目录结构
+          2. 构建配置文件
+          3. 依赖管理文件
+          4. 基础设施配置
+          
+          要求：
+          - 使用企业标准模板
+          - 标注各文件用途
+          - 包含CI/CD配置
+        output_format: "tree-structure"
+      dependencies: ["context-enhancer"]
+
+    - id: "core-code-gen"
+      type: "generation"
+      name: "核心逻辑生成"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          基于以下上下文生成生产级代码：
+          设计上下文：{{design_context}}
+          参考代码模式：{{code_patterns}}
+          API规范：{{api_specs}}
+          
+          要求：
+          1. 严格遵循设计文档
+          2. 使用企业代码规范
+          3. 包含防御性编程
+          4. 关键方法需有日志埋点
+          5. 添加TODO标记待完善处
+        language: "java"  # 可动态参数化
+        generate_tests: true
+      dependencies: ["context-enhancer", "code-pattern-lookup", "api-spec-lookup"]
+
+    # ========== 质量保障阶段 ==========
+    - id: "static-analysis"
+      type: "processing"
+      name: "静态代码检查"
+      model: "deepseek-r1-14b"
+      parameters:
+        task: |
+          执行以下检查：
+          1. 代码风格合规性
+          2. 潜在安全漏洞
+          3. 性能反模式
+          4. 与企业规范的偏差
+          
+          输出检查报告（按严重程度分级）
+      dependencies: ["core-code-gen"]
+
+    - id: "test-gen"
+      type: "generation"
+      name: "单元测试生成"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          为生成的代码创建单元测试：
+          1. 使用企业测试框架
+          2. 覆盖正常/异常场景
+          3. 包含断言说明
+          4. 模拟外部依赖
+          
+          测试覆盖率目标：>=80%
+        test_framework: "JUnit5"  # 可参数化
+      dependencies: ["core-code-gen"]
+
+    # ========== 输出阶段 ==========
+    - id: "output"
+      type: "output"
+      name: "代码资产包"
+      parameters:
+        formats:
+          - type: "zip"
+            structure:
+              - "src/main/{{language}}"
+              - "src/test/{{language}}"
+              - "config/"
+            filename_template: "代码包_{{timestamp}}.zip"
+          - type: "markdown"
+            filename_template: "代码生成报告_{{timestamp}}.md"
+            includes: ["静态分析报告", "测试覆盖率评估"]
+      dependencies: ["static-analysis", "test-gen"]
+
+settings:
+  ollama:
+    base_url: "http://ollama-enterprise:11434"
+    gpu_acceleration: true
+  code:
+    default_language: "java"
+    style_guide: "企业Java开发规范v3.2"
+  security:
+    enable_code_sanitization: true
+
+edges:
+  - from: "design-input"
+    to: "context-enhancer"
+  - from: "context-enhancer"
+    to: ["code-pattern-lookup", "api-spec-lookup", "scaffold-generator"]
+  - from: ["code-pattern-lookup", "api-spec-lookup"]
+    to: "core-code-gen"
+  - from: "core-code-gen"
+    to: ["static-analysis", "test-gen"]
+  - from: ["static-analysis", "test-gen"]
+    to: "output"

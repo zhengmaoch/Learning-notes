@@ -1,0 +1,238 @@
+version: "1.2.0"
+app:
+  name: "AI需求分析助手"
+  description: "基于Ollama模型的软件需求分析工作流"
+  icon: "📋"
+  mode: "workflow"
+  enable_site: true
+  api_rpm: 30
+
+models:
+  - id: "deepseek-r1-14b"
+    type: "llm"
+    provider: "ollama"
+    name: "deepseek-r1-14b"
+    parameters:
+      temperature: 0.7
+      max_tokens: 4096
+      top_p: 0.9
+    credentials:
+      base_url: "http://localhost:11434"
+
+  - id: "nomic-embed-text"
+    type: "text_embedding"
+    provider: "ollama"
+    name: "nomic-embed-text"
+    credentials:
+      base_url: "http://localhost:11434"
+
+workflows:
+  - name: "需求分析主流程"
+    nodes:
+      - id: "input_node"
+        type: "start"
+        position: {x: 100, y: 100}
+        data:
+          variables:
+            - name: "raw_requirements"
+              type: "string"
+              required: true
+              description: "原始需求描述"
+
+      - id: "req_classification"
+        type: "llm"
+        model: "deepseek-r1-14b"
+        position: {x: 350, y: 100}
+        data:
+          prompt: |
+            你是一个专业的软件需求分析师。请根据以下需求描述进行分类和标签化：
+            
+            {{raw_requirements}}
+            
+            请按以下格式响应：
+            - 需求类型：[功能/非功能/业务/技术]
+            - 优先级：[高/中/低]
+            - 相关模块：[模块1,模块2,...]
+            - 关键词：[关键词1,关键词2,...]
+          output:
+            - name: "req_type"
+              type: "string"
+            - name: "priority"
+              type: "string"
+            - name: "modules"
+              type: "list"
+            - name: "keywords"
+              type: "list"
+
+      - id: "ambiguity_detection"
+        type: "llm"
+        model: "deepseek-r1-14b"
+        position: {x: 350, y: 250}
+        data:
+          prompt: |
+            分析以下需求描述，识别其中的模糊点和需要澄清的问题：
+            
+            {{raw_requirements}}
+            
+            输出格式：
+            - 模糊点1：[描述]
+            - 澄清问题1：[问题]
+            - 模糊点2：[描述]
+            - 澄清问题2：[问题]
+            ...
+          output:
+            - name: "ambiguities"
+              type: "list"
+            - name: "clarification_questions"
+              type: "list"
+
+      - id: "doc_generation"
+        type: "llm"
+        model: "deepseek-r1-14b"
+        position: {x: 600, y: 100}
+        data:
+          prompt: |
+            基于以下需求信息，生成结构化需求文档：
+            
+            原始需求：{{raw_requirements}}
+            需求类型：{{req_type}}
+            优先级：{{priority}}
+            相关模块：{{modules}}
+            
+            请按以下格式生成文档：
+            # 需求文档
+            
+            ## 1. 需求概述
+            [内容]
+            
+            ## 2. 详细描述
+            [内容]
+            
+            ## 3. 用户故事
+            [内容]
+            
+            ## 4. 验收标准
+            [内容]
+          output:
+            - name: "requirement_doc"
+              type: "string"
+
+      - id: "similar_req_search"
+        type: "embedding_search"
+        model: "nomic-embed-text"
+        position: {x: 600, y: 250}
+        data:
+          dataset_id: "historical_requirements"
+          query: "{{raw_requirements}}"
+          top_k: 3
+          output:
+            - name: "similar_requirements"
+              type: "list"
+
+      - id: "conflict_detection"
+        type: "llm"
+        model: "deepseek-r1-14b"
+        position: {x: 850, y: 100}
+        data:
+          prompt: |
+            分析以下新需求与历史相似需求的潜在冲突：
+            
+            新需求：{{raw_requirements}}
+            
+            相似历史需求：
+            {% for req in similar_requirements %}
+            - {{req.content}}
+            {% endfor %}
+            
+            请识别潜在冲突并提出解决方案建议。
+          output:
+            - name: "potential_conflicts"
+              type: "list"
+            - name: "resolution_suggestions"
+              type: "list"
+
+      - id: "output_node"
+        type: "end"
+        position: {x: 1100, y: 100}
+        data:
+          outputs:
+            - name: "requirement_doc"
+              type: "string"
+              reference: "doc_generation.requirement_doc"
+            - name: "clarification_needed"
+              type: "list"
+              reference: "ambiguity_detection.clarification_questions"
+            - name: "potential_conflicts"
+              type: "list"
+              reference: "conflict_detection.potential_conflicts"
+
+    edges:
+      - source: "input_node"
+        target: "req_classification"
+        sourceHandle: "output"
+        targetHandle: "raw_requirements"
+
+      - source: "input_node"
+        target: "ambiguity_detection"
+        sourceHandle: "output"
+        targetHandle: "raw_requirements"
+
+      - source: "input_node"
+        target: "doc_generation"
+        sourceHandle: "output"
+        targetHandle: "raw_requirements"
+
+      - source: "input_node"
+        target: "similar_req_search"
+        sourceHandle: "output"
+        targetHandle: "query"
+
+      - source: "req_classification"
+        target: "doc_generation"
+        sourceHandle: "req_type"
+        targetHandle: "req_type"
+
+      - source: "req_classification"
+        target: "doc_generation"
+        sourceHandle: "priority"
+        targetHandle: "priority"
+
+      - source: "req_classification"
+        target: "doc_generation"
+        sourceHandle: "modules"
+        targetHandle: "modules"
+
+      - source: "similar_req_search"
+        target: "conflict_detection"
+        sourceHandle: "similar_requirements"
+        targetHandle: "similar_requirements"
+
+      - source: "doc_generation"
+        target: "output_node"
+        sourceHandle: "requirement_doc"
+        targetHandle: "requirement_doc"
+
+      - source: "ambiguity_detection"
+        target: "output_node"
+        sourceHandle: "clarification_questions"
+        targetHandle: "clarification_needed"
+
+      - source: "conflict_detection"
+        target: "output_node"
+        sourceHandle: "potential_conflicts"
+        targetHandle: "potential_conflicts"
+
+datasets:
+  - id: "historical_requirements"
+    name: "历史需求库"
+    description: "存储历史需求文档用于相似性搜索"
+    document_type: "text"
+    indexing_technique: "high_quality"
+    embedding_model: "nomic-embed-text"
+    metadata_schema:
+      - name: "project"
+        type: "string"
+      - name: "date"
+        type: "date"
+      - name: "status"
+        type: "string"

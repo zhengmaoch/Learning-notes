@@ -1,0 +1,101 @@
+name: "AI软件文档生成工作流"
+description: "使用AI自动从源代码生成规范化的技术文档"
+version: "1.1"
+engine:
+  type: "dify"
+  version: "0.6.0"
+
+workflow:
+  nodes:
+    - id: "code-input"
+      type: "input"
+      name: "代码输入"
+      parameters:
+        description: "上传源代码文件或直接粘贴代码"
+        input_type: "file-or-text"
+        required: true
+        supported_formats: 
+          - ".py"
+          - ".js"
+          - ".java"
+          - ".go"
+          - ".ts"
+
+    - id: "code-analyzer"
+      type: "processing"
+      name: "代码分析器"
+      model: "claude-3-sonnet"
+      parameters:
+        task: |
+          分析代码结构并识别以下元素：
+          - 函数/方法定义
+          - 类定义
+          - 参数列表
+          - 返回值
+          - 依赖关系
+        output_format: "structured_json"
+      dependencies: ["code-input"]
+
+    - id: "doc-generator"
+      type: "generation"
+      name: "文档生成器"
+      model: "gpt-4-turbo"
+      parameters:
+        prompt: |
+          根据代码分析结果生成技术文档，要求包含：
+          1. 模块概述
+          2. 函数说明（含参数、返回值）
+          3. 使用示例
+          4. 注意事项
+          5. 依赖说明
+          
+          使用Markdown格式，中文输出
+        temperature: 0.3
+        max_tokens: 4000
+      dependencies: ["code-analyzer"]
+
+    - id: "format-adjuster"
+      type: "processing"
+      name: "格式优化器"
+      model: "claude-3-haiku"
+      parameters:
+        task: |
+          对生成的文档进行以下优化：
+          1. 添加目录
+          2. 统一标题层级
+          3. 标准化代码块格式
+          4. 添加版本兼容性说明
+          5. 符合中文技术文档写作规范
+      dependencies: ["doc-generator"]
+
+    - id: "review-module"
+      type: "processing"
+      name: "质量审查"
+      model: "gpt-4"
+      parameters:
+        task: |
+          检查文档的以下方面：
+          1. 技术准确性
+          2. 内容完整性
+          3. 语言流畅性
+          4. 格式规范性
+          5. 标记需要人工复核的部分
+      dependencies: ["format-adjuster"]
+
+    - id: "output"
+      type: "output"
+      name: "文档输出"
+      parameters:
+        formats:
+          - type: "markdown"
+            filename_template: "{{timestamp}}_技术文档.md"
+          - type: "html"
+            filename_template: "{{timestamp}}_技术文档.html"
+      dependencies: ["review-module"]
+
+settings:
+  memory:
+    enable_context_memory: true
+    max_context_size: 10000
+  logging:
+    enable_execution_log: true

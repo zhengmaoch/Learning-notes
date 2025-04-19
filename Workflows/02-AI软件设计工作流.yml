@@ -1,0 +1,181 @@
+name: "企业软件智能设计工作流"
+description: "结合知识库的架构/概要/详细设计全流程生成系统"
+version: "2.0"
+engine:
+  type: "dify"
+  version: "0.6.0"
+
+components:
+  models:
+    - name: "deepseek-r1-14b"
+      provider: "ollama"
+      type: "llm"
+      params:
+        temperature: 0.5
+        top_p: 0.9
+        max_tokens: 12000
+        
+    - name: "nomic-embed-text"
+      provider: "ollama"
+      type: "embedding"
+      params:
+        embedding_size: 768
+
+knowledge_bases:
+  - id: "arch-patterns-kb"
+    name: "架构模式知识库"
+    embedding_model: "nomic-embed-text"
+    description: "存储企业技术规范、历史设计方案和架构决策记录"
+    metadata_fields:
+      - "适用领域"
+      - "技术栈"
+      - "性能指标"
+
+  - id: "component-lib"
+    name: "组件库"
+    embedding_model: "nomic-embed-text" 
+    description: "企业级可复用组件设计文档"
+
+workflow:
+  nodes:
+    # ========== 输入阶段 ==========
+    - id: "req-input"
+      type: "input"
+      name: "需求输入"
+      parameters:
+        input_type: "text"
+        description: "输入已确认的需求规格说明书"
+        required: true
+
+    # ========== 知识检索阶段 ==========
+    - id: "arch-pattern-retrieval"
+      type: "knowledge_retrieval"
+      name: "架构模式检索"
+      parameters:
+        knowledge_base: "arch-patterns-kb"
+        top_k: 3
+        min_similarity: 0.7
+      dependencies: ["req-input"]
+
+    - id: "component-retrieval"
+      type: "knowledge_retrieval"  
+      name: "可复用组件检索"
+      parameters:
+        knowledge_base: "component-lib"
+        top_k: 5
+        min_similarity: 0.6
+      dependencies: ["req-input"]
+
+    # ========== 架构设计阶段 ==========
+    - id: "arch-design"
+      type: "processing"
+      name: "系统架构设计"
+      model: "deepseek-r1-14b"
+      parameters:
+        system_prompt: |
+          作为企业架构师，请基于以下要素生成技术架构：
+          1. 绘制C4模型图（L1-L3）
+          2. 标识关键架构决策点
+          3. 标注技术选型依据
+          4. 评估架构风险
+          
+          输出格式：
+          - 架构图（PlantUML语法）
+          - 决策矩阵表格
+          - 风险评估报告
+        user_prompt_template: "需求：{{input}}\n\n相关架构模式：{{arch_patterns}}\n可用组件：{{components}}"
+      dependencies: ["req-input", "arch-pattern-retrieval", "component-retrieval"]
+
+    # ========== 概要设计阶段 ========== 
+    - id: "high-level-design"
+      type: "processing"
+      name: "概要设计生成"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          根据架构设计生成概要设计文档，包含：
+          1. 模块划分图（Mermaid语法）
+          2. 接口定义（OpenAPI格式）
+          3. 数据流设计
+          4. 关键算法描述
+          
+          要求符合企业设计规范：
+          - 使用标准术语表
+          - 标注复用组件ID
+          - 包含容量预估
+        temperature: 0.3
+      dependencies: ["arch-design"]
+
+    # ========== 详细设计阶段 ==========
+    - id: "detail-design"
+      type: "processing"  
+      name: "详细设计生成"
+      model: "deepseek-r1-14b"
+      parameters:
+        prompt: |
+          生成可指导开发的详细设计：
+          1. 类图（PlantUML）
+          2. 时序图（Mermaid）
+          3. 数据库ER图
+          4. 接口详细说明
+          5. 错误代码规范
+          
+          要求：
+          - 每个方法包含前置/后置条件
+          - 标注性能敏感点
+          - 包含单元测试要点
+      dependencies: ["high-level-design"]
+
+    # ========== 设计验证阶段 ==========
+    - id: "design-review"
+      type: "processing"
+      name: "自动化设计评审"
+      model: "deepseek-r1-14b"
+      parameters:
+        system_prompt: |
+          作为首席技术官，请检查设计文档的：
+          1. 与需求的一致性
+          2. 技术方案合理性
+          3. 与企业规范的符合度
+          4. 潜在风险项
+          
+          输出评审报告（含改进建议）
+      dependencies: ["detail-design"]
+
+    # ========== 输出阶段 ==========
+    - id: "output"
+      type: "output"
+      name: "设计资产包"
+      parameters:
+        formats:
+          - type: "markdown"
+            filename_template: "设计文档_{{timestamp}}.md"
+            includes: ["架构设计", "概要设计", "详细设计"]
+          - type: "plantuml"
+            filename_template: "架构图_{{timestamp}}.puml" 
+          - type: "json"
+            filename_template: "设计元数据_{{timestamp}}.json"
+      dependencies: ["design-review"]
+
+settings:
+  ollama:
+    base_url: "http://ollama-host:11434"
+    request_timeout: 300
+  memory:
+    context_window: 16000
+  tracing:
+    enable_design_decisions_log: true
+
+edges:
+  - from: "req-input"
+    to: ["arch-pattern-retrieval", "component-retrieval"]
+  - from: ["arch-pattern-retrieval", "component-retrieval"]
+    to: "arch-design"
+  - from: "arch-design"
+    to: "high-level-design"
+  - from: "high-level-design"
+    to: "detail-design"
+  - from: "detail-design"
+    to: "design-review"
+  - from: "design-review"
+    to: "output"
